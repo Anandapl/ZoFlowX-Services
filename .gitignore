@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Next.js build files
+.next/
+
+# Environment files
+.env
+.env.local
+
+# Claude settings
+.claude/
+
+# VS Code settings
+.vscode/
