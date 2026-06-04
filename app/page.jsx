@@ -618,6 +618,11 @@ export default function Page() {
           INDUSTRIES
           ============================================================ */}
       <section className="relative overflow-hidden bg-[#111827] px-8 py-[120px] text-cream before:absolute before:left-0 before:right-0 before:top-0 before:h-px before:bg-[linear-gradient(90deg,transparent,#D9F75C,transparent)] max-[720px]:px-0 max-[720px]:py-20">
+        <div class="absolute inset-0 pointer-events-none">
+     <div className="absolute inset-0 pointer-events-none overflow-hidden">
+  <div className="absolute -top-[100px] -left-[100px] h-[500px] w-[500px] rounded-full bg-red-500/20 blur-[180px]"></div>
+</div>
+  </div>
         <div className="mx-auto max-w-[1320px] px-8 max-[720px]:px-5">
           <div className="mb-[60px] flex flex-wrap items-center justify-between gap-10">
             <div className="reveal">
