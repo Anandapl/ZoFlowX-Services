@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-inter: "Inter", "Inter Fallback";
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  font-family: var(--font-inter);
 }
 
 /* Reveal-on-scroll animation (toggled by IntersectionObserver in page.jsx) */
@@ -17,7 +22,6 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 
 
@@ -37,7 +41,9 @@ html {
   animation: shimmer 2.5s linear infinite;
 }  
 
-
+h2 {
+  font-weight: 700;
+}
 
 
 

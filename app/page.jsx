@@ -69,6 +69,7 @@ const STEPS = [
   { num: "07", h: "Ongoing Support", p: "Business changed? New KPI? We're a message away. ZoFlowX doesn't disappear after launch." },
 ];
 
+
 const WHY_POINTS = [
   { icon: "★", h: "Authorized Zoho Partner — with deep Analytics focus", p: "We're certified across the Zoho stack, but Analytics dashboards are our craft. You won't get a generalist." },
   { icon: "⚡", h: "Speed without shortcuts", p: "Most projects ship in 3–5 weeks. We move fast because we've built this 200+ times — but never skip the basics." },
@@ -157,9 +158,8 @@ const Arrow = () => <span className="inline-flex items-center leading-none">→<
 function Eyebrow({ children, light, center, className = "" }) {
   return (
     <div
-      className={`inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.18em] ${
-        light ? "text-cream/60" : "text-muted"
-      } ${center ? "" : "before:h-px before:w-6 before:bg-current before:opacity-60"} ${className}`}
+      className={`inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.18em] ${light ? "text-cream/60" : "text-muted"
+        } ${center ? "" : "before:h-px before:w-6 before:bg-current before:opacity-60"} ${className}`}
     >
       {children}
     </div>
@@ -283,14 +283,6 @@ export default function Page() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(14,14,18,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(14,14,18,.04)_1px,transparent_1px)] bg-[length:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
         <div className="relative mx-auto grid max-w-[1320px] grid-cols-[1.15fr_.85fr] items-center gap-[60px] px-8 max-[1000px]:grid-cols-1 max-[1000px]:gap-12 max-[720px]:px-5">
           <div>
-            {/* <div className="reveal mb-9 flex flex-wrap items-center gap-3.5">
-              <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-3.5 py-[7px] text-[11px] font-medium uppercase tracking-[0.08em]">
-                <span className="h-[7px] w-[7px] flex-shrink-0 animate-[pulse_2s_infinite] rounded-full bg-red-500" /> Authorized Zoho Partner
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-3.5 py-[7px] text-[11px] font-medium uppercase tracking-[0.08em]">
-                Zoho Analytics · Dashboard Customization
-              </span>
-            </div> */}
             <div className="reveal mb-9 flex flex-wrap items-center gap-3.5">
               <div className="relative inline-flex items-center px-5 py-2 rounded-full overflow-hidden bg-gradient-to-r from-blue-100 via-yellow-100 to-red-100 text-blue-800 border border-blue-200 shadow-sm">
 
@@ -356,13 +348,10 @@ export default function Page() {
 
           {/* Hero dashboard mock */}
           <div className="reveal relative rotate-[1.2deg] rounded-3xl p-6 text-cream shadow-[0_50px_100px_-30px_rgba(14,14,18,.4)] transition-transform duration-500 hover:translate-y-[-4px] hover:rotate-0 max-[720px]:rotate-0">
-            <div className="absolute -left-[18px] -top-[18px] -rotate-6 rounded-full bg-coral px-3.5 py-2 text-[11px] font-medium uppercase tracking-[0.08em] text-white shadow-[0_8px_20px_-6px_rgba(232,93,47,.5)]">
-              Live Preview
-            </div>
             <div className="mb-[18px] flex items-center justify-between border-b border-white/10 pb-4 text-black">
               <div className="bg-white text-[11px] uppercase tracking-[0.12em] opacity-60">ZoFlowX · Sales Dashboard</div>
               <div className="flex gap-[5px]">
-                <span className="h-2 w-2 rounded-full bg-lime" />
+                <span className="h-2 w-2 rounded-full bg-[#3B82F6]" />
                 <span className="h-2 w-2 rounded-full bg-white/20" />
                 <span className="h-2 w-2 rounded-full bg-white/20" />
               </div>
@@ -385,7 +374,7 @@ export default function Page() {
               <div className="mb-3.5 flex items-center justify-between">
                 <h4 className="text-[11px] font-medium uppercase tracking-[0.1em] text-cream/60">Revenue · Last 7 Months</h4>
                 <div className="flex gap-2.5 text-[10px] text-cream/50">
-                  <span><i className="mr-[5px] inline-block h-2 w-2 rounded-full bg-lime" />Won</span>
+                  <span><i className="mr-[5px] inline-block h-2 w-2 rounded-full bg-[#3B82F6]" />Won</span>
                   <span><i className="mr-[5px] inline-block h-2 w-2 rounded-full bg-coral" />Lost</span>
                 </div>
               </div>
@@ -401,8 +390,15 @@ export default function Page() {
                 ].map(([h, c, d], i) => (
                   <div
                     key={i}
-                    className={`flex-1 animate-[rise_1s_ease-out_backwards] rounded-t ${c === "lime" ? "bg-lime" : "bg-coral"}`}
-                    style={{ height: h, animationDelay: d }}
+                    className="flex-1 animate-[rise_1s_ease-out_backwards] rounded-t"
+                    style={{
+                      height: h,
+                      animationDelay: d,
+                      background:
+                        c === "lime"
+                          ? "linear-gradient(to top, #2563EB, #3B82F6)"
+                          : "#EF4444",
+                    }}
                   />
                 ))}
               </div>
@@ -414,8 +410,8 @@ export default function Page() {
                 <div className="text-[22px]">38.6%</div>
               </div>
               <svg viewBox="0 0 120 40" fill="none" className="max-w-[120px] flex-1">
-                <path d="M0,30 L15,25 L30,28 L45,18 L60,22 L75,12 L90,15 L105,6 L120,8" stroke="#D9F75C" strokeWidth="2" fill="none" strokeLinecap="round" />
-                <circle cx="120" cy="8" r="3" fill="#D9F75C" />
+                <path d="M0,30 L15,25 L30,28 L45,18 L60,22 L75,12 L90,15 L105,6 L120,8" stroke="#3B82F6" strokeWidth="2" fill="none" strokeLinecap="round" />
+                <circle cx="120" cy="8" r="3" fill="#3B82F6" />
               </svg>
             </div>
           </div>
@@ -425,7 +421,7 @@ export default function Page() {
       {/* ============================================================
           MARQUEE
           ============================================================ */}
-      <section className="overflow-hidden border-t border-white/5 bg-white py-6 text-black">
+      {/* <section className="overflow-hidden border-t border-white/5 bg-white py-6 text-black">
         <div className="flex animate-[slide_40s_linear_infinite] gap-[60px] whitespace-nowrap text-[38px] font-light tracking-[-0.02em] max-[700px]:text-[28px]">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((s, i) => (
             <span key={i} className="inline-flex items-center gap-[30px] after:inline-block after:h-2 after:w-2 after:rounded-full after:bg-red-500 after:content-['']">
@@ -433,7 +429,7 @@ export default function Page() {
             </span>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ============================================================
           PROBLEM
@@ -459,9 +455,8 @@ export default function Page() {
             {PROBLEMS.map((it, i) => (
               <div
                 key={it.num}
-                className={`group grid grid-cols-[60px_1fr_auto] items-start gap-5 border-b border-ink/10 py-7 transition-[padding] duration-300 hover:pl-3.5 ${
-                  i === 0 ? "border-t" : ""
-                }`}
+                className={`group grid grid-cols-[60px_1fr_auto] items-start gap-5 border-b border-ink/10 py-7 transition-[padding] duration-300 hover:pl-3.5 ${i === 0 ? "border-t" : ""
+                  }`}
               >
                 <span className="pt-1.5 text-[13px] text-muted">{it.num}</span>
                 <div>
@@ -482,21 +477,25 @@ export default function Page() {
           ============================================================ */}
       <section id="services" className="relative bg-white px-8 py-[70px] text-[#111827] max-[720px]:px-0 max-[720px]:py-20">
         <div className="relative mx-auto max-w-[1320px] px-8 max-[720px]:px-5">
-          <div className="mb-[70px] grid grid-cols-2 items-center gap-[60px] max-[900px]:grid-cols-1 max-[900px]:gap-6">
-            <div className="reveal">
+          <div className="mb-[70px]">
+            <div className="reveal max-w-[800px]">
               <Eyebrow>What We Customize</Eyebrow>
-              <h2 className="text-5xl leading-none tracking-[-0.03em] text-black">
+
+              <h2 className="text-5xl leading-none tracking-[-0.03em] text-black whitespace-nowrap">
                 Built around <em className={`not-italic ${grad}`}>your business</em>, not a template.
               </h2>
+
+              <p className="mt-8 max-w-[650px] text-[17px] leading-relaxed text-black">
+                Every business has a different way of measuring success. As a Certified Zoho Partner,
+                ZoFlowX customizes Zoho Analytics dashboards for the way your team thinks, reports,
+                and decides.
+              </p>
             </div>
-            <p className="reveal max-w-[460px] text-[17px] text-black">
-              Every business has a different way of measuring success. As a Certified Zoho Partner, ZoFlowX customizes Zoho Analytics dashboards for the way your team thinks, reports, and decides.
-            </p>
           </div>
 
           <div className="grid grid-cols-3 gap-px border border-white/10 bg-white/10 max-[900px]:grid-cols-2 max-[600px]:grid-cols-1">
             {SERVICES.map((s) => (
-              <div key={s.num} className="group relative flex min-h-[280px] flex-col bg-ink px-8 pb-8 pt-[38px] transition-colors duration-300 hover:bg-ink2">
+              <div key={s.num} className="group relative flex min-h-[280px] flex-col bg-[#111827] px-8 pb-8 pt-[38px] transition-colors duration-300 hover:bg-gradient-to-br hover:from-[#24213E] hover:to-[#2C1F35]">
                 <div className="text-[11px] tracking-[0.1em] text-cream/40">{s.num}</div>
                 <div className="absolute right-8 top-8 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 group-hover:rotate-[-45deg] group-hover:bg-red-500">
                   →
@@ -536,18 +535,42 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="reveal grid grid-cols-7 border-y border-ink/20 max-[1100px]:grid-cols-2 max-[600px]:grid-cols-1">
+
+          {/* <div className="reveal grid grid-cols-7 border-y border-ink/20 max-[1100px]:grid-cols-2 max-[600px]:grid-cols-1">
             {STEPS.map((st, i) => (
               <div key={st.num} className="flex min-h-[240px] flex-col border border-[#BFDBFE] bg-[rgb(240,242,236)] p-[30px_22px] px-[22px] py-[30px] transition-colors duration-300 hover:bg-white/70">
                 <div
-                  className={`mb-[18px] flex h-9 w-9 items-center justify-center rounded-full text-[13px] font-medium ${
-                    [0, 3, 6].includes(i) ? "bg-blue-500 text-white" : "bg-ink text-cream"
-                  }`}
+                  className={`mb-[18px] flex h-9 w-9 items-center justify-center rounded-full text-[13px] font-medium ${[0, 3, 6].includes(i) ? "bg-blue-500 text-white" : "bg-ink text-cream"
+                    }`}
                 >
                   {st.num}
                 </div>
                 <h3 className="mb-2.5 text-[21px] leading-[1.15]">{st.h}</h3>
                 <p className="text-sm leading-[1.5] text-[#4a4a4f]">{st.p}</p>
+              </div>
+            ))}
+          </div> */}
+          <div className="reveal grid grid-cols-3 gap-8 max-[1100px]:grid-cols-2 max-[700px]:grid-cols-1">
+            {STEPS.map((st) => (
+              <div
+                key={st.num}
+                className="group rounded-[32px] border border-[#BFDBFE] bg-white p-8 transition-all duration-300 hover:border-[rgb(239,68,68)] hover:bg-gradient-to-br hover:from-[#eff6ff] hover:to-[#fefce8] hover:-translate-y-2 hover:shadow-xl"
+              >
+                <h3 className="mb-3 text-[24px] font-bold leading-[1.1] text-[#0F172A]">
+                  {st.h}
+                </h3>
+
+                <p className="mb-5 text-[14px] leading-[1.6] text-[#475569]">
+                  {st.p}
+                </p>
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 text-lg transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-red-500 group-hover:text-white group-hover:border-transparent">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up-right"
+                  >
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
+                </div>
               </div>
             ))}
           </div>
@@ -567,28 +590,13 @@ export default function Page() {
         <div className="mx-auto grid max-w-[1320px] grid-cols-2 items-start gap-20 px-8 max-[1000px]:grid-cols-1 max-[1000px]:gap-12 max-[720px]:px-5">
           <div className="reveal">
             <Eyebrow>Why ZoFlowX</Eyebrow>
-            <h2 className="my-5 text-5xl leading-none tracking-[-0.03em]">
-              You're not hiring a vendor. You're hiring a <em className="font-bold not-italic text-coral">partner.</em>
+            <h2 className="my-5 text-5xl leading-none tracking-[-0.03em] font-bold">
+              You're not hiring a vendor. You're hiring a <em className="not-italic bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent font-bold">partner.</em>
             </h2>
             <p className="max-w-[480px] text-[17px] text-[#3b3b40]">
               Anyone can drag charts onto a screen. ZoFlowX is a Top Zoho Consulting Partner that designs dashboards your team will use for years — not just open once.
             </p>
 
-            <div className="group relative mt-9 overflow-hidden rounded-3xl border border-ink/10 bg-paper p-[34px]">
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-red-500 opacity-40 blur-[40px]" />
-              <div className="absolute left-3 right-3 top-0 h-1 w-0 rounded-full bg-[linear-gradient(90deg,#2563EB_0%,#7C3AED_50%,#EF4444_100%)] transition-all duration-[600ms] ease-in-out group-hover:w-[540px]" />
-              <div className="-mb-5 text-[80px] leading-[.8] text-coral">“</div>
-              <blockquote className="relative z-10 text-[22px] font-normal leading-[1.4] tracking-[-0.01em]">
-                We don't just strategize — we get into the details, audit your tech, and build dashboards that work from day one. That's the ZoFlowX promise.
-              </blockquote>
-              <div className="mt-6 flex items-center gap-3.5 border-t border-ink/10 pt-[22px]">
-                <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-br from-coral to-gold text-[22px] font-medium text-white">A</div>
-                <div>
-                  <div className="text-lg font-medium">Arul Raj</div>
-                  <div className="text-[11px] uppercase tracking-[0.08em] text-muted">Founder, ZoFlowX · 13+ Years</div>
-                </div>
-              </div>
-            </div>
 
             <div className="mt-10">
               <a href="#book" className={btnPrimary}>
@@ -602,7 +610,7 @@ export default function Page() {
               const iconBg = ["bg-ink text-red-500", "bg-red-500 text-ink", "bg-coral text-white", "bg-gold text-ink"][i];
               return (
                 <div key={w.h} className={`grid grid-cols-[80px_1fr] gap-[22px] border-b border-ink/10 py-[30px] ${i === 0 ? "border-t" : ""}`}>
-                  <div className={`flex h-[60px] w-[60px] items-center justify-center rounded-[14px] text-2xl ${iconBg}`}>{w.icon}</div>
+                  <div className={`flex h-[60px] w-[60px] items-center justify-center rounded-[14px] text-2xl text-black bg-gradient-to-r from-blue-500 to-red-500 ${iconBg}`}>{w.icon}</div>
                   <div>
                     <h3 className="mb-2 text-[22px] font-medium">{w.h}</h3>
                     <p className="text-[15.5px] text-[#4a4a4f]">{w.p}</p>
@@ -618,17 +626,15 @@ export default function Page() {
           INDUSTRIES
           ============================================================ */}
       <section className="relative overflow-hidden bg-[#111827] px-8 py-[120px] text-cream before:absolute before:left-0 before:right-0 before:top-0 before:h-px before:bg-[linear-gradient(90deg,transparent,#D9F75C,transparent)] max-[720px]:px-0 max-[720px]:py-20">
-        <div class="absolute inset-0 pointer-events-none">
-     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-  <div className="absolute -top-[100px] -left-[100px] h-[500px] w-[500px] rounded-full bg-red-500/20 blur-[180px]"></div>
-</div>
-  </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-[100px] -left-[100px] h-[500px] w-[500px] rounded-full bg-red-500/20 blur-[180px]"></div>
+        </div>
         <div className="mx-auto max-w-[1320px] px-8 max-[720px]:px-5">
           <div className="mb-[60px] flex flex-wrap items-center justify-between gap-10">
             <div className="reveal">
               <Eyebrow light>Industries We Serve</Eyebrow>
-              <h2 className="mt-[18px] max-w-[680px] text-5xl leading-none tracking-[-0.03em]">
-                Custom Zoho Analytics dashboards for <em className="font-bold not-italic text-red-500">every kind of business.</em>
+              <h2 className="mt-[18px] max-w-[680px] text-5xl leading-none tracking-[-0.03em] font-bold">
+                Custom Zoho Analytics dashboards for <em className="not-italic bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent font-bold">every kind of business.</em>
               </h2>
             </div>
             <a href="#book" className={`reveal ${btnLime}`}>
@@ -638,12 +644,20 @@ export default function Page() {
 
           <div className="reveal grid grid-cols-3 gap-3.5 max-[900px]:grid-cols-2 max-[600px]:grid-cols-1">
             {INDUSTRIES.map((ind) => (
-              <div key={ind.h} className="group flex cursor-pointer items-center justify-between gap-4 rounded-[18px] border border-white/10 px-6 py-[26px] transition-all duration-300 hover:-translate-y-[3px] hover:border-blue-500 hover:bg-blue-500 hover:text-ink">
+              <div
+                key={ind.h}
+                className="group flex cursor-pointer items-center justify-between gap-4 rounded-[18px] border border-white/10 px-6 py-[26px] transition-all duration-300 hover:-translate-y-[3px] hover:bg-gradient-to-br hover:from-[#24213E] hover:to-[#2C1F35] hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+              >
                 <div>
                   <h3 className="text-[22px] font-medium">{ind.h}</h3>
-                  <div className="mt-1 text-[11px] uppercase tracking-[0.08em] text-cream/50 group-hover:text-ink/60">{ind.m}</div>
+                  <div className="mt-1 text-[11px] uppercase tracking-[0.08em] text-cream/50">
+                    {ind.m}
+                  </div>
                 </div>
-                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center transition-transform duration-300 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]">↗</div>
+
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center transition-transform duration-300 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]">
+                  ↗
+                </div>
               </div>
             ))}
           </div>
@@ -655,7 +669,7 @@ export default function Page() {
           ============================================================ */}
       <section id="cases" className="relative bg-[linear-gradient(135deg,#EAF2FF_0%,#F3F4F6_100%)] px-8 py-[70px] max-[720px]:px-0 max-[720px]:py-20">
         <div className="mx-auto max-w-[1320px] px-8 max-[720px]:px-5">
-          <div className="mb-[60px] grid grid-cols-2 items-center gap-[60px] max-[900px]:grid-cols-1 max-[900px]:gap-6">
+          <div className="mb-[60px] grid grid-cols-1 items-center gap-[60px] max-[900px]:grid-cols-1 max-[900px]:gap-6">
             <div className="reveal">
               <Eyebrow>Real Wins, Real Numbers</Eyebrow>
               <h2 className="text-5xl leading-none tracking-[-0.03em]">
@@ -713,9 +727,8 @@ export default function Page() {
               return (
                 <div
                   key={t.n}
-                  className={`relative flex flex-col rounded-[22px] border p-[32px_30px] px-[30px] py-8 transition-transform duration-300 hover:-translate-y-1 ${
-                    dark ? "border-ink bg-ink text-cream" : "border-ink/10 bg-paper"
-                  }`}
+                  className={`relative flex flex-col rounded-[22px] border p-[32px_30px] px-[30px] py-8 transition-transform duration-300 hover:-translate-y-1 ${dark ? "border-ink bg-ink text-cream" : "border-ink/10 bg-paper"
+                    }`}
                 >
                   <div className={`mb-[18px] text-sm tracking-[2px] ${dark ? "text-red-500" : "text-coral"}`}>★★★★★</div>
                   <div className={`mb-2 text-[64px] leading-[.5] ${dark ? "text-red-500" : "text-coral"}`}>“</div>
@@ -815,9 +828,8 @@ export default function Page() {
                   >
                     {f.q}
                     <span
-                      className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                        open ? "rotate-45 border-red-500 bg-red-500" : "border-ink/20"
-                      }`}
+                      className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${open ? "rotate-45 border-red-500 bg-red-500" : "border-ink/20"
+                        }`}
                     >
                       +
                     </span>
@@ -920,9 +932,27 @@ export default function Page() {
               <textarea name="notes" placeholder="One line about your biggest dashboard headache..." className={`${inputClass} min-h-[80px] resize-y`} />
             </div>
 
-            <button type="submit" className="form-submit relative z-10 mt-1.5 flex w-full items-center justify-center gap-2.5 rounded-xl bg-ink py-[17px] text-[15px] font-medium text-cream transition-all duration-200 hover:-translate-y-px hover:bg-black">
+            <button
+              type="submit"
+              class="form-submit relative z-10 mt-1.5 flex w-full items-center justify-center gap-2.5 rounded-xl bg-red-500 py-[17px] text-[15px] font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-red-600"
+            >
               Book My Free Audit
-              <span className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-red-500 text-ink">→</span>
+              <span class="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-white text-red-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={14}
+                  height={14}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </span>
             </button>
             <p className="relative z-10 mt-3.5 text-center text-[11px] tracking-[0.04em] text-muted">No spam. No pitch decks. Just a real conversation.</p>
           </form>
@@ -1016,3 +1046,4 @@ function Field({ label, ...props }) {
     </div>
   );
 }
+
