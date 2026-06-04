@@ -17,3 +17,27 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+
+/* skimmer */
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s linear infinite;
+}  
+
+
+
+
+

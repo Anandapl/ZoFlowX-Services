@@ -283,13 +283,45 @@ export default function Page() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(14,14,18,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(14,14,18,.04)_1px,transparent_1px)] bg-[length:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
         <div className="relative mx-auto grid max-w-[1320px] grid-cols-[1.15fr_.85fr] items-center gap-[60px] px-8 max-[1000px]:grid-cols-1 max-[1000px]:gap-12 max-[720px]:px-5">
           <div>
-            <div className="reveal mb-9 flex flex-wrap items-center gap-3.5">
+            {/* <div className="reveal mb-9 flex flex-wrap items-center gap-3.5">
               <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-3.5 py-[7px] text-[11px] font-medium uppercase tracking-[0.08em]">
                 <span className="h-[7px] w-[7px] flex-shrink-0 animate-[pulse_2s_infinite] rounded-full bg-red-500" /> Authorized Zoho Partner
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-3.5 py-[7px] text-[11px] font-medium uppercase tracking-[0.08em]">
                 Zoho Analytics · Dashboard Customization
               </span>
+            </div> */}
+            <div className="reveal mb-9 flex flex-wrap items-center gap-3.5">
+              <div className="relative inline-flex items-center px-5 py-2 rounded-full overflow-hidden bg-gradient-to-r from-blue-100 via-yellow-100 to-red-100 text-blue-800 border border-blue-200 shadow-sm">
+
+                {/* Shimmer Animation */}
+
+                <span className="absolute top-0 left-0 h-full w-[70%] bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer"></span>
+
+                {/* Content */}
+                <span className="relative flex items-center gap-2 font-bold text-[14px]">
+                  <span className="h-[7px] w-[7px] rounded-full bg-red-500"></span>
+                  Authorized Zoho Partner
+                </span>
+
+
+              </div>
+
+              <div className="relative inline-flex items-center px-5 py-2 rounded-full overflow-hidden bg-gradient-to-r from-blue-100 via-yellow-100 to-red-100 text-blue-800 border border-blue-200 shadow-sm">
+
+                {/* Shimmer Animation */}
+
+                <span className="absolute top-0 left-0 h-full w-[70%] bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer"></span>
+
+                {/* Content */}
+                <span className="relative flex items-center gap-2 font-bold text-[14px]">
+                  <span className="h-[7px] w-[7px] rounded-full bg-red-500"></span>
+                  Zoho Analytics · Dashboard Customization
+                </span>
+
+
+              </div>
+
             </div>
             <h1 className="reveal mb-8 text-5xl font-extrabold leading-[1.15] tracking-[-0.035em]">
               Dashboards your team will <span className={grad}>actually open</span>
