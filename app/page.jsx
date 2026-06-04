@@ -171,7 +171,7 @@ const btnPrimary =
 const btnGhost =
   "inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700";
 const btnLime =
-  "inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-red-500 to-red-600 px-6 py-4 text-sm font-semibold text-ink transition-transform duration-300 hover:-translate-y-0.5";
+  "inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-red-500 to-red-600 px-6 py-4 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5";
 
 /* gradient text used on <em> words */
 const grad =
@@ -684,7 +684,7 @@ export default function Page() {
           <div className="grid grid-cols-[1.3fr_1fr_1fr] gap-[18px] max-[1000px]:grid-cols-1">
             {CASES.map((c) => (
               <div key={c.h} className="reveal flex min-h-[380px] flex-col gap-5 overflow-hidden rounded-3xl border border-[#BFDBFE] bg-[#F0F2EC] p-8 transition-all duration-300 hover:-translate-y-[6px] hover:border-[#FCA5A5] hover:shadow-[0_30px_60px_-25px_rgba(14,14,18,.2)]">
-                <span className="w-max rounded-full bg-red-500 px-3 py-1.5 text-[10.5px] uppercase tracking-[0.1em] text-ink">{c.tag}</span>
+                <span className="w-max rounded-full bg-red-500 px-3 py-1.5 text-[10.5px] uppercase tracking-[0.1em] text-white">{c.tag}</span>
                 <h3 className="text-[26px] leading-[1.15] tracking-[-0.01em]">{c.h}</h3>
                 <p className="flex-1 text-[15px] leading-[1.55] text-[#4a4a4f]">{c.p}</p>
                 <div className="grid grid-cols-2 gap-[18px] border-t border-ink/10 pt-[18px]">
