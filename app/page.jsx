@@ -171,7 +171,7 @@ const btnPrimary =
 const btnGhost =
   "inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-700";
 const btnLime =
-  "inline-flex items-center justify-center gap-2 rounded-full bg-red-500 px-6 py-4 text-sm font-semibold text-ink transition-transform duration-300 hover:-translate-y-0.5";
+  "inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-red-500 to-red-600 px-6 py-4 text-sm font-semibold text-ink transition-transform duration-300 hover:-translate-y-0.5";
 
 /* gradient text used on <em> words */
 const grad =
@@ -607,7 +607,7 @@ export default function Page() {
 
           <div className="reveal flex flex-col">
             {WHY_POINTS.map((w, i) => {
-              const iconBg = ["bg-ink text-red-500", "bg-red-500 text-ink", "bg-coral text-white", "bg-gold text-ink"][i];
+              const iconBg = ["bg-ink text-white", "bg-red-500 text-white", "bg-coral text-white", "bg-gold text-white"][i];
               return (
                 <div key={w.h} className={`grid grid-cols-[80px_1fr] gap-[22px] border-b border-ink/10 py-[30px] ${i === 0 ? "border-t" : ""}`}>
                   <div className={`flex h-[60px] w-[60px] items-center justify-center rounded-[14px] text-2xl text-black bg-gradient-to-r from-blue-500 to-red-500 ${iconBg}`}>{w.icon}</div>
@@ -1046,4 +1046,3 @@ function Field({ label, ...props }) {
     </div>
   );
 }
-
