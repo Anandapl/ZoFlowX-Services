@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+
 /* ============================================================
    DATA  — kept in-file so every section lives in page.jsx
    ============================================================ */
@@ -460,12 +461,10 @@ export default function Page() {
               >
                 <span className="pt-1.5 text-[13px] text-muted">{it.num}</span>
                 <div>
-                  <h3 className="mb-1.5 text-2xl font-medium">{it.h}</h3>
+                  <h3 className="mb-1.5 text-2xl font-bold">{it.h}</h3>
                   <p className="max-w-[520px] text-[15.5px] text-[#4a4a4f]">{it.p}</p>
                 </div>
-                <span className="mt-1.5 self-start rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-white">
-                  We Fix This
-                </span>
+               
               </div>
             ))}
           </div>
@@ -612,7 +611,7 @@ export default function Page() {
                 <div key={w.h} className={`grid grid-cols-[80px_1fr] gap-[22px] border-b border-ink/10 py-[30px] ${i === 0 ? "border-t" : ""}`}>
                   <div className={`flex h-[60px] w-[60px] items-center justify-center rounded-[14px] text-2xl text-black bg-gradient-to-r from-blue-500 to-red-500 ${iconBg}`}>{w.icon}</div>
                   <div>
-                    <h3 className="mb-2 text-[22px] font-medium">{w.h}</h3>
+                    <h3 className="mb-2 text-[22px] font-bold">{w.h}</h3>
                     <p className="text-[15.5px] text-[#4a4a4f]">{w.p}</p>
                   </div>
                 </div>
@@ -875,9 +874,9 @@ export default function Page() {
             </ul>
 
             <div className="flex flex-wrap items-center gap-6 border-t border-white/10 pt-8 text-[13px] text-cream/60">
-              <span>Prefer email? <a href="mailto:hello@zoflowx.com" className="text-red-500">hello@zoflowx.com</a></span>
+              <span>Prefer email? <a href="mailto:info@zoflowx.com" className="text-red-500">info@zoflowx.com</a></span>
               <span className="text-cream/30">|</span>
-              <span>Or call: <a href="tel:+910000000000" className="text-red-500">+91 00000 00000</a></span>
+              <span>Or call: <a href="tel:+91 8190009222" className="text-red-500">+91 8190009222</a></span>
             </div>
           </div>
 
@@ -915,17 +914,7 @@ export default function Page() {
               </select>
             </div>
 
-            <div className="relative z-10 mb-3.5">
-              <FieldLabel>Preferred time</FieldLabel>
-              <select name="time" required className={inputClass}>
-                <option value="">When works for you?</option>
-                <option>This week — morning</option>
-                <option>This week — afternoon</option>
-                <option>Next week — morning</option>
-                <option>Next week — afternoon</option>
-                <option>Flexible — pick a slot for me</option>
-              </select>
-            </div>
+          
 
             <div className="relative z-10 mb-3.5">
               <FieldLabel>Anything we should know? (optional)</FieldLabel>
@@ -934,7 +923,7 @@ export default function Page() {
 
             <button
               type="submit"
-              class="form-submit relative z-10 mt-1.5 flex w-full items-center justify-center gap-2.5 rounded-xl bg-red-500 py-[17px] text-[15px] font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-red-600"
+              class="form-submit relative z-10 mt-1.5 flex w-full items-center justify-center gap-2.5 rounded-xl bg-red-500 py-[17px] text-[15px] font-medium text-white transition-all duration-200"
             >
               Book My Free Audit
               <span class="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-white text-red-500">
