@@ -499,8 +499,8 @@ export default function Page() {
                 <div className="absolute right-8 top-8 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 group-hover:rotate-[-45deg] group-hover:bg-red-500">
                   →
                 </div>
-                <h3 className="my-[14px] mt-[18px] text-[26px] font-semibold leading-[1.1] text-white">{s.h}</h3>
-                <p className="flex-1 text-[15px] leading-[1.5] text-cream/65">{s.p}</p>
+                <h3 className="text-lg my-[14px] mt-[18px] text-[26px] font-semibold leading-[1.1] text-white">{s.h}</h3>
+                <p className="flex-1 text-[14px] leading-[1.5] text-cream/65">{s.p}</p>
                 <span className="mt-[18px] w-max rounded-full bg-[rgba(217,247,92,.15)] px-2.5 py-[5px] text-[10px] uppercase tracking-[0.1em] text-red-500">
                   {s.tag}
                 </span>
