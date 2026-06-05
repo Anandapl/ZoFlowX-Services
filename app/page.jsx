@@ -555,7 +555,7 @@ export default function Page() {
                 key={st.num}
                 className="group rounded-[32px] border border-[#BFDBFE] bg-white p-8 transition-all duration-300 hover:border-[rgb(239,68,68)] hover:bg-gradient-to-br hover:from-[#eff6ff] hover:to-[#fefce8] hover:-translate-y-2 hover:shadow-xl"
               >
-                <h3 className="mb-3 text-[24px] font-bold leading-[1.1] text-[#0F172A]">
+                <h3 className="text-lg mb-3 text-[24px] font-bold leading-[1.1] text-[#0F172A]">
                   {st.h}
                 </h3>
 
