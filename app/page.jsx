@@ -648,7 +648,7 @@ export default function Page() {
                 className="group flex cursor-pointer items-center justify-between gap-4 rounded-[18px] border border-white/10 px-6 py-[26px] transition-all duration-300 hover:-translate-y-[3px] hover:bg-gradient-to-br hover:from-[#24213E] hover:to-[#2C1F35] hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
               >
                 <div>
-                  <h3 className="text-[22px] font-medium">{ind.h}</h3>
+                  <h3 className="text-lg font-medium">{ind.h}</h3>
                   <div className="mt-1 text-[11px] uppercase tracking-[0.08em] text-cream/50">
                     {ind.m}
                   </div>
