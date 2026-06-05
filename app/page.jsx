@@ -176,7 +176,7 @@ const btnLime =
 
 /* gradient text used on <em> words */
 const grad =
-  "bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent font-bold";
+  "bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent font-extrabold";
 
 /* ============================================================
    PAGE
